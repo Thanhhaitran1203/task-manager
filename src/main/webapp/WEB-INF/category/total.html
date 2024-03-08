@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Total Amount</title>
+</head>
+<body>
+<table id = "tasks">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="t : ${totals}">
+        <td th:text="${t.getNameCategory()}"></td>
+        <td th:text="${t.getTotalAmount()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

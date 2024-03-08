@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/category/create}">Create new category</a>
+
+<table id="category">
+    <tr>
+        <td>#</td>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Total</td>
+        <td>Update</td>
+        <td>Delete</td>
+    </tr>
+    <tr th:each="c,cStatus:${categories}">
+        <td th:text="${cStatus.count}"></td>
+        <td th:text="${c.name}"></td>
+        <td th:text="${c.description}"></td>
+        <td><a th:href="@{/category/total}">Update</a></td>
+        <td><a th:href="@{/category/update/{id}(id=${c.getId()})}">Update</a></td>
+        <td><a th:href="@{/category/delete/{id}(id=${c.getId()})}">Delete</a></td>
+
+    </tr>
+</table>
+
+
+</body>
+</html>
